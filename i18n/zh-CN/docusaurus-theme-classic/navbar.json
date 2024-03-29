@@ -18,5 +18,29 @@
   "item.label.Help Improve Page": {
     "message": "帮助改进页面",
     "description": "Navbar item with label Help Improve Page"
+  },
+  "item.label.Start": {
+    "message": "开始",
+    "description": "Navbar item with label Start"
+  },
+  "item.label.Nodes": {
+    "message": "节点",
+    "description": "Navbar item with label Nodes"
+  },
+  "item.label.Mining": {
+    "message": "挖矿",
+    "description": "Navbar item with label Mining"
+  },
+  "item.label.Blockchain": {
+    "message": "区块链",
+    "description": "Navbar item with label Blockchain"
+  },
+  "item.label.Contract": {
+    "message": "智能合约",
+    "description": "Navbar item with label Contract"
+  },
+  "item.label.Tools": {
+    "message": "工具",
+    "description": "Navbar item with label Tools"
   }
 }

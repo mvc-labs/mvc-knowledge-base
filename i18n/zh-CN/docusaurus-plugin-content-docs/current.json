@@ -3,20 +3,132 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - Basics": {
-    "message": "基本教程",
-    "description": "The label for category Tutorial - Basics in sidebar tutorialSidebar"
+  "sidebar.introSidebar.category.Introduction": {
+    "message": "MVC 简介",
+    "description": "The label for category Introduction in sidebar introSidebar"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - Basics.link.generated-index.description": {
-    "message": "5 minutes to learn the most important Docusaurus concepts.",
-    "description": "The generated-index page description for category Tutorial - Basics in sidebar tutorialSidebar"
+  "sidebar.introSidebar.category.Introduction.link.generated-index.description": {
+    "message": "MVC是什么，为什么选择MVC作为你的Web3区块链.",
+    "description": "The generated-index page description for category Introduction in sidebar introSidebar"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - Extras": {
-    "message": "Tutorial - Extras",
-    "description": "The label for category Tutorial - Extras in sidebar tutorialSidebar"
+  "sidebar.introSidebar.category.Getting Started": {
+    "message": "快速开始",
+    "description": "The label for category Getting Started in sidebar introSidebar"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - More": {
-    "message": "更多",
-    "description": "The label for category Tutorial - Extras in sidebar tutorialSidebar"
+  "sidebar.introSidebar.category.Getting Started.link.generated-index.description": {
+    "message": "快速体验MVC的核心功能。",
+    "description": "The generated-index page description for category Getting Started in sidebar introSidebar"
+  },
+  "sidebar.nodesSidebar.category.Installation": {
+    "message": "节点安装",
+    "description": "The label for category Installation in sidebar nodesSidebar"
+  },
+  "sidebar.nodesSidebar.category.Installation.link.generated-index.description": {
+    "message": "MVC节点安装与部署指南.",
+    "description": "The generated-index page description for category Installation in sidebar nodesSidebar"
+  },
+  "sidebar.miningSidebar.category.Mining Configurations": {
+    "message": "挖矿设置",
+    "description": "The label for category Mining Configurations in sidebar miningSidebar"
+  },
+  "sidebar.miningSidebar.category.Mining Configurations.link.generated-index.description": {
+    "message": "如何设置矿机并接入MVC网络进行挖矿.",
+    "description": "The generated-index page description for category Mining Configurations in sidebar miningSidebar"
+  },
+  "sidebar.miningSidebar.category.Mining Concepts": {
+    "message": "挖矿相关概念",
+    "description": "The label for category Mining Concepts in sidebar miningSidebar"
+  },
+  "sidebar.miningSidebar.category.Mining Concepts.link.generated-index.description": {
+    "message": "介绍挖矿相关的技术概念以及底层技术原理",
+    "description": "The generated-index page description for category Mining Concepts in sidebar miningSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Bitcoin Basic Technology": {
+    "message": "比特币技术基础",
+    "description": "The label for category Bitcoin Basic Technology in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Bitcoin Basic Technology.link.generated-index.description": {
+    "message": "MVC基于比特币，所以很多技术原理继承自比特币技术，这里介绍比特币和MVC相同的技术.",
+    "description": "The generated-index page description for category Bitcoin Basic Technology in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.cryptocraphy": {
+    "message": "密码学",
+    "description": "The label for category cryptocraphy in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.networking": {
+    "message": "网络",
+    "description": "The label for category networking in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.MVC Improvements": {
+    "message": "MVC技术改进",
+    "description": "The label for category MVC Improvements in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.MVC Improvements.link.generated-index.description": {
+    "message": "介绍MVC的技术创新和特点。",
+    "description": "The generated-index page description for category MVC Improvements in sidebar blockchainSidebar"
+  },
+  "sidebar.contractSidebar.category.Getting Started": {
+    "message": "快速上手",
+    "description": "The label for category Getting Started in sidebar contractSidebar"
+  },
+  "sidebar.contractSidebar.category.Getting Started.link.generated-index.description": {
+    "message": "快速上手编写智能合约",
+    "description": "The generated-index page description for category Getting Started in sidebar contractSidebar"
+  },
+  "sidebar.contractSidebar.category.Bitcoin Scripts": {
+    "message": "比特币脚本",
+    "description": "The label for category Bitcoin Scripts in sidebar contractSidebar"
+  },
+  "sidebar.contractSidebar.category.Bitcoin Scripts.link.generated-index.description": {
+    "message": "介绍比特币脚本技术和标准交易格式",
+    "description": "The generated-index page description for category Bitcoin Scripts in sidebar contractSidebar"
+  },
+  "sidebar.contractSidebar.category.Scrypt Language": {
+    "message": "Scrypt语言",
+    "description": "The label for category Scrypt Language in sidebar contractSidebar"
+  },
+  "sidebar.contractSidebar.category.Scrypt Language.link.generated-index.description": {
+    "message": "介绍MVC的智能合约编程语言Scrypt",
+    "description": "The generated-index page description for category Scrypt Language in sidebar contractSidebar"
+  },
+  "sidebar.contractSidebar.category.MVC Standard Contracts": {
+    "message": "MVC标准合约",
+    "description": "The label for category MVC Standard Contracts in sidebar contractSidebar"
+  },
+  "sidebar.contractSidebar.category.MVC Standard Contracts.link.generated-index.description": {
+    "message": "介绍MVC标准合约",
+    "description": "The generated-index page description for category MVC Standard Contracts in sidebar contractSidebar"
+  },
+  "sidebar.toolsSidebar.category.Command Line Interface": {
+    "message": "命令行钱包工具",
+    "description": "The label for category Command Line Interface in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Command Line Interface.link.generated-index.description": {
+    "message": "使用命令行工具与MVC区块链进行交互.",
+    "description": "The generated-index page description for category Command Line Interface in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.SDK": {
+    "message": "SDK",
+    "description": "The label for category SDK in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.SDK.link.generated-index.description": {
+    "message": "MVC 社区提供的多语言SDK",
+    "description": "The generated-index page description for category SDK in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Typescript": {
+    "message": "Typescript",
+    "description": "The label for category Typescript in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Typescript.link.generated-index.description": {
+    "message": "MVC provided SDK in typescript",
+    "description": "The generated-index page description for category Typescript in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Java": {
+    "message": "Java",
+    "description": "The label for category Java in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Java.link.generated-index.description": {
+    "message": "MVC provided SDK in Java",
+    "description": "The generated-index page description for category Java in sidebar toolsSidebar"
   }
 }
