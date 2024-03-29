@@ -130,5 +130,29 @@
   "sidebar.toolsSidebar.category.Java.link.generated-index.description": {
     "message": "MVC 社区提供的Java SDK",
     "description": "The generated-index page description for category Java in sidebar toolsSidebar"
+  },
+  "sidebar.introSidebar.category.Environment Setup": {
+    "message": "环境设置",
+    "description": "侧边栏introSidebar中“环境设置”类别的标签"
+  },
+  "sidebar.introSidebar.category.Environment Setup.link.generated-index.description": {
+    "message": "设置本地测试环境并开始构建交易。",
+    "description": "侧边栏introSidebar中“环境设置”类别的generated-index页面描述"
+  },
+  "sidebar.introSidebar.category.Build Transactions": {
+    "message": "构建交易",
+    "description": "侧边栏introSidebar中“构建交易”类别的标签"
+  },
+  "sidebar.introSidebar.category.Build Transactions.link.generated-index.description": {
+    "message": "使用cli钱包和sdk来构建交易。",
+    "description": "侧边栏introSidebar中“构建交易”类别的generated-index页面描述"
+  },
+  "sidebar.introSidebar.category.Review and Confirm TXs": {
+    "message": "审核和确认交易",
+    "description": "侧边栏introSidebar中“审核和确认交易”类别的标签"
+  },
+  "sidebar.introSidebar.category.Review and Confirm TXs.link.generated-index.description": {
+    "message": "使用MVC提供的工具来审核和确认交易。",
+    "description": "侧边栏introSidebar中“审核和确认交易”类别的generated-index页面描述"
   }
 }
