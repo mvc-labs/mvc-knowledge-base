@@ -8,6 +8,12 @@ The content of this knowledge base is fully open-source and can be contributed t
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
+### Documentation
+
+The documentation is hosted on the [MVC Documentation](https://docs.mvclabs.io/).
+
+简体中文：[MVC 知识库](https://docs.mvclabs.io/zh-CN/)
+
 ### Installation
 
 ```
