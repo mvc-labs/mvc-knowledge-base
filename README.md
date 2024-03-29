@@ -43,4 +43,5 @@ You can contribute to this knowledge base by submitting a pull request with your
 6. Wait for your changes to be reviewed and merged.
 7. Celebrate your contribution!
 
+
 The maintainers of this knowledge base will review your changes and provide feedback if necessary. Once your changes are approved, they will be merged into the main repository and published to the website. You could be rewarded based on the quality of your contribution.
