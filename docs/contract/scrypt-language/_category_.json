@@ -1,0 +1,8 @@
+{
+  "label": "Scrypt Language",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Introduction to Scrypt, the language used to write smart contracts on the MVC blockchain."
+  }
+}

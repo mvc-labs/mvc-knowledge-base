@@ -1,0 +1,8 @@
+{
+  "label": "Command Line Interface",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Command line wallet to interact with MVC Chain."
+  }
+}
