@@ -39,6 +39,7 @@ jobs:
         # uses: jakejarvis/s3-sync-action@be0c4ab89158cac4278689ebedd8407dd5f35a83
         uses: jakejarvis/s3-sync-action@master
         with:
+          # need to remove --acl public-read
           args: --follow-symlinks --delete
         env:
           AWS_S3_BUCKET: 'mvclabs-prod-docs-origin'
