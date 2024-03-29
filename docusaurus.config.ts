@@ -113,7 +113,7 @@ const config: Config = {
                     position: 'right',
                 },
                 {
-                    href: 'https://github.com/mvc-labs/mvc-knowlege-base',
+                    href: 'https://github.com/mvc-labs/mvc-knowledge-base',
                     label: 'Help Improve Page',
                     position: 'right',
                 },

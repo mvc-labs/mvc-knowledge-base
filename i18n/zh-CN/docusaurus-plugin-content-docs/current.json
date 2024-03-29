@@ -120,7 +120,7 @@
     "description": "The label for category Typescript in sidebar toolsSidebar"
   },
   "sidebar.toolsSidebar.category.Typescript.link.generated-index.description": {
-    "message": "MVC provided SDK in typescript",
+    "message": "MVC 社区提供的Typescript SDK",
     "description": "The generated-index page description for category Typescript in sidebar toolsSidebar"
   },
   "sidebar.toolsSidebar.category.Java": {
@@ -128,7 +128,7 @@
     "description": "The label for category Java in sidebar toolsSidebar"
   },
   "sidebar.toolsSidebar.category.Java.link.generated-index.description": {
-    "message": "MVC provided SDK in Java",
+    "message": "MVC 社区提供的Java SDK",
     "description": "The generated-index page description for category Java in sidebar toolsSidebar"
   }
 }
