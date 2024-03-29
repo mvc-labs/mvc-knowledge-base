@@ -1,0 +1,8 @@
+{
+  "label": "MVC CLI",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "MVC CLI can be installed along with full node software, this is instructions on mvc-cli commandline tool to send command to full node directly."
+  }
+}
