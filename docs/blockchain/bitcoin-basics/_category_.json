@@ -1,6 +1,6 @@
 {
-  "label": "Bitcoin Basic Technology",
-  "position": 1,
+  "label": "Basic Bitcoin Concepts",
+  "position": 2,
   "link": {
     "type": "generated-index",
     "description": "Introduction to basic technology MVC inherited from Bitcoin."

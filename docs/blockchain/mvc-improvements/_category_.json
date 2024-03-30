@@ -1,8 +1,8 @@
 {
   "label": "MVC Improvements",
-  "position": 2,
+  "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "Introduction to the specific improvement on MVC."
+    "description": "Introduction to the specific improvement on MVC. If you new to the bitcoin concept, please read the Bitcoin Basics first."
   }
 }

@@ -1,0 +1,8 @@
+{
+  "label": "Block",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "The inner structure of a block."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Cryptography",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Cryptography concepts including keys and addresses."
+  }
+}
