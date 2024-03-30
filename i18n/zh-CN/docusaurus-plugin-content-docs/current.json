@@ -178,5 +178,53 @@
   "sidebar.nodesSidebar.category.RPC Definition.link.generated-index.description": {
     "message": "向节点发送JsonRpc命令用来和节点进行交互.",
     "description": "The generated-index page description for category RPC Definition in sidebar nodesSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Basic Bitcoin Concepts": {
+    "message": "比特币技术基础",
+    "description": "The label for category Basic Bitcoin Concepts in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Basic Bitcoin Concepts.link.generated-index.description": {
+    "message": "介绍MVC的根基，比特币的基础技术.",
+    "description": "The generated-index page description for category Basic Bitcoin Concepts in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Cryptography": {
+    "message": "密码学相关",
+    "description": "The label for category Cryptography in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Cryptography.link.generated-index.description": {
+    "message": "密码学相关介绍，包括密钥，地址等概念.",
+    "description": "The generated-index page description for category Cryptography in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Networking": {
+    "message": "点对点网络",
+    "description": "The label for category Networking in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Networking.link.generated-index.description": {
+    "message": "区块链点对点网络相关概念.",
+    "description": "The generated-index page description for category Networking in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Blockchain": {
+    "message": "区块链技术",
+    "description": "The label for category Blockchain in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Blockchain.link.generated-index.description": {
+    "message": "区块链是什么，区块链的特点和技术原理.",
+    "description": "The generated-index page description for category Blockchain in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Block": {
+    "message": "区块",
+    "description": "The label for category Block in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Block.link.generated-index.description": {
+    "message": "区块的内部结构以及相关概念。",
+    "description": "The generated-index page description for category Block in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Transaction": {
+    "message": "交易",
+    "description": "The label for category Transaction in sidebar blockchainSidebar"
+  },
+  "sidebar.blockchainSidebar.category.Transaction.link.generated-index.description": {
+    "message": "比特币交易是如何构成的，交易的结构和相关概念.",
+    "description": "The generated-index page description for category Transaction in sidebar blockchainSidebar"
   }
 }
