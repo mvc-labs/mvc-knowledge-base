@@ -1,4 +1,4 @@
 ---
 sidebar_position: 1
 ---
-# 双栈模型
+# DAO 合约
