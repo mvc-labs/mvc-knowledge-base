@@ -1,0 +1,8 @@
+{
+  "label": "Blockchain Explorer",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Blockchain Explorer or Browsers to confirm transaction status."
+  }
+}
