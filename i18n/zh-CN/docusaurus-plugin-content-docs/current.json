@@ -234,5 +234,53 @@
   "sidebar.contractSidebar.category.Examples.link.generated-index.description": {
     "message": "一些常见功能的合约示例.",
     "description": "The generated-index page description for category Examples in sidebar contractSidebar"
+  },
+  "sidebar.toolsSidebar.category.Open Source Wallets": {
+    "message": "开源钱包工具",
+    "description": "The label for category Open Source Wallets in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Open Source Wallets.link.generated-index.description": {
+    "message": "全功能开源钱包工具。",
+    "description": "The generated-index page description for category Open Source Wallets in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Golang": {
+    "message": "Go语言",
+    "description": "The label for category Golang in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Golang.link.generated-index.description": {
+    "message": "社区提供的Go语言SDK",
+    "description": "The generated-index page description for category Golang in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Python": {
+    "message": "Python语言",
+    "description": "The label for category Python in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Python.link.generated-index.description": {
+    "message": "社区提供的Python语言SDK",
+    "description": "The generated-index page description for category Python in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Rust": {
+    "message": "Rust语言",
+    "description": "The label for category Rust in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Rust.link.generated-index.description": {
+    "message": "社区提供的Rust语言SDK",
+    "description": "The generated-index page description for category Rust in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Blockchain Explorer": {
+    "message": "区块链浏览器",
+    "description": "The label for category Blockchain Explorer in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Blockchain Explorer.link.generated-index.description": {
+    "message": "使用区块链浏览器查看交易，余额等信息",
+    "description": "The generated-index page description for category Blockchain Explorer in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Public API": {
+    "message": "公共API",
+    "description": "The label for category Public API in sidebar toolsSidebar"
+  },
+  "sidebar.toolsSidebar.category.Public API.link.generated-index.description": {
+    "message": "使用公共API快速访问服务.",
+    "description": "The generated-index page description for category Public API in sidebar toolsSidebar"
   }
 }
