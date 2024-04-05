@@ -8,7 +8,7 @@
     "description": "The label for category Introduction in sidebar introSidebar"
   },
   "sidebar.introSidebar.category.Introduction.link.generated-index.description": {
-    "message": "MVC是什么，为什么选择MVC作为你的Web3区块链.",
+    "message": "MVC是什么，为什么选择MVC作为你的Web3区块链。带你首次进入MVC的世界。",
     "description": "The generated-index page description for category Introduction in sidebar introSidebar"
   },
   "sidebar.introSidebar.category.Getting Started": {
