@@ -1,4 +1,4 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
-# 节点启动命令与参数
+# 节点启动命令与配置
