@@ -33,13 +33,15 @@ cd mvc-dockerfile
 bash docker-build.bash 
 ```
 
-脚本默认会下载构建并构建最新版本，如果你希望构建旧版本的节点软件，可以使用如下命令指定版本号
+脚本默认会下载构建并构建最新版本，如果你希望构建旧版本的节点软件，可以使用如下命令指定版本号.
+
+> 注意，打包镜像使用的默认mvc.conf 是代码仓库中的配置文件，如果你需要修改配置文件，可以在构建之前修改配置文件。当然也可以在运行容器的时候指定配置文件。
 
 ```bash
 bash docker-build.bash v0.2.0.0
 ```
 
-你还可以将构建好的镜像打上latest标签，方便后续使用
+你还可以将构建好的镜像打上latest标签，方便后续使用。
 
 ```bash
 docker tag microvisionchain:v0.2.0.0 microvisionchain:latest
