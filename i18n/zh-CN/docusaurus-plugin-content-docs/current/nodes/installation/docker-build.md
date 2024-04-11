@@ -87,7 +87,7 @@ public.ecr.aws/h8c8i3v2/microvisionchain   v0.2.0.0   35630de7b95e   2 hours ago
 
 ## 运行Docker容器
 
-### 直接运行
+### 直接运行(非生产环境)
 
 运行Docker之前，请确保你已经安装docker，并构建或者拉取了镜像(参考上文的内容)。
 
@@ -97,7 +97,7 @@ public.ecr.aws/h8c8i3v2/microvisionchain   v0.2.0.0   35630de7b95e   2 hours ago
 docker run -d --name microvisionchain -p 9883:9883 -p 9882:9882 microvisionchain:latest
 ```
 
-它会采用默认配置启动节点，数据和配置也会存放在容器默认路径`/root/.mvc/`下，另外由于容器环境不同，日志不是输出在mvcd.log中而是stdio，你可以通过`docker logs microvisionchain`查看节点日志。
+它会采用默认配置启动节点，数据和配置也会存放在容器默认路径`/root/.mvc/`下，另外由于容器环境不同，日志不是输出在mvcd.log中而是stdio，你可以通过`docker logs -f microvisionchain`查看节点日志。
 
 节点容器启动之后，可以使用mvc-cli来查看节点信息：
 
@@ -105,12 +105,69 @@ docker run -d --name microvisionchain -p 9883:9883 -p 9882:9882 microvisionchain
 docker exec microvisionchain mvc-cli getinfo
 ```
 
-这样配置的好处是管理相对简单，但是缺点是持久化存储依赖于容器运行时，如果容器被删除，数据也会丢失。所以不推荐生产环境直接执行docker。另外，默认配置无法修改config文件，如果你需要修改配置文件，可以使用下面的方法。
+这样配置的好处是管理相对简单，但是缺点是持久化存储依赖于容器运行时，如果容器被删除，数据也会丢失，备份和恢复节点数据也很麻烦。所以不推荐生产环境直接执行docker。另外，默认配置无法修改config文件，如果你需要修改配置文件，可以使用下面的方法。
 
 ### 使用docker-compose运行
 
 docker-compose是docker的一个管理工具，可以通过yaml文件来管理多个容器的启动和配置。在docker
 compose中，你可以指定节点的配置文件和数据目录绑定到主机，方便管理和维护。也可以设置节点网络桥接到主机等。
+
+本教程中，我们将数据目录绑定到主机的`~/mvc-data`目录,并通过volume mount到容器内的`/mvc/data`路径下，然后引导容器使用`/mvc/data`来存储数据，这样即使容器被删除，数据和配置也不会丢失。
+
+首先，在宿主机创建数据目录（你也可以绑定不同的硬盘到这个目录）：
+
+```bash
+mkdir -p ~/mvc-data
+```
+
+clone项目到本地(其中包含config和docker-compose）：
+
+```bash
+git clone https://github.com/mvc-labs/mvc-dockerfile.git
+cd mvc-dockerfile
+```
+
+修改项目目录其中的mvc.conf文件，比如修改rpcuser和rpcpassword，以及其他配置项。具体配置项的含义和用法请参考[配置文件说明](start-up-command.md)
+
+配置完成后，运行docker-compose：
+
+```bash
+docker compose  up -d
+```
+
+这样就可以启动节点容器了，你可以通过`docker compose ls`查看容器状态：
+
+```bash
+NAME                STATUS              CONFIG FILES
+mvc-dockerfile      running(1)          /home/ubuntu/mvc-dockerfile/docker-compose.yml
+```
+
+也可以用`docker compose logs -f`查看节点日志。
+
+使用mvc-cli 与节点通信：
+
+```bash
+docker compose exec mvcd mvc-cli help
+```
+预期会看到节点的帮助信息，代表启动成功。
+
+```text
+$ docker compose exec mvcd mvc-cli help
+== Blockchain ==
+checkjournal
+getbestblockhash
+getblock "blockhash" ( verbosity )
+getblockbyheight height ( verbosity )
+getblockchaininfo
+getblockcount
+getblockhash height
+getblockheader "hash" ( verbose )
+getblockstats blockhash ( stats )
+getblockstatsbyheight height ( stats )
+getchaintips
+```
+
+如果需要备份和恢复节点数据，只需要备份和恢复`~/mvc-data`目录即可。
 
 ## 附录
 
