@@ -1,4 +1,112 @@
 ---
 sidebar_position: 3
 ---
+
 # 使用Docker构建与运行
+
+为了方便运维和管理，很多用户选择在容器化的环境中运行节点，包括Docker
+Compose以及Kubernetes等。MVC同样提供了Docker镜像的构建和下载，方便用户使用容器化的环境来安装和部署节点软件。
+
+本文档将介绍如何使用Docker构建和运行节点。
+
+## 构建Docker镜像
+
+本章介绍如何从源码自行构建节点镜像，如果你希望直接拉取公共镜像仓库使用，可以直接跳过这部分内容。
+
+Docker镜像的定义文件Dockerfile位于 [mvc-dockerfile](https://github.com/mvc-labs/mvc-dockerfile)
+项目中，你可以随时查阅源码。它从`ubuntu:20.04`
+基础镜像构建，安装了节点软件的依赖库和运行环境，然后下载二进制文件和默认配置，并执行`docker build`。
+
+> 构建镜像对系统没有要求，只要能够运行docker并且执行bash脚本即可。这里所有测试在macos（arm chips）和ubuntu 20.04
+> LTS上通过。但是节点软件只能在x86架构的机器上运行。
+
+首先clone项目到本地：
+
+```bash
+git clone https://github.com/mvc-labs/mvc-dockerfile.git
+cd mvc-dockerfile
+```
+
+然后执行构建命令：
+
+```bash
+bash docker-build.bash 
+```
+
+脚本默认会下载构建并构建最新版本，如果你希望构建旧版本的节点软件，可以使用如下命令指定版本号
+
+```bash
+bash docker-build.bash v0.2.0.0
+```
+
+你还可以将构建好的镜像打上latest标签，方便后续使用
+
+```bash
+docker tag microvisionchain:v0.2.0.0 microvisionchain:latest
+```
+
+构建完成后，你可以使用`docker images`查看构建的镜像：
+
+```bash
+docker images
+```
+
+可以看到如下输出：
+
+```text
+REPOSITORY         TAG        IMAGE ID       CREATED          SIZE
+microvisionchain   v0.2.0.0   35630de7b95e   22 minutes ago   967MB
+```
+
+表示构建成功，你可以直接在本地使用这个镜像来运行节点，或者根据你的需求将镜像推送到远端仓库进行管理。
+
+## 从公开仓库拉取Docker容器
+
+你可以根据上文的构建步骤构建Docker镜像，也可以直接拉取我们构建好的镜像。MVC
+labs还提供免费公开的[ECR镜像仓库](https://gallery.ecr.aws/h8c8i3v2/microvisionchain)可供直接拉取构建好的镜像，方便用户快速部署节点。
+
+```bash
+# 拉取最新版本
+docker pull public.ecr.aws/h8c8i3v2/microvisionchain:latest
+# 打上latest标签
+docker tag public.ecr.aws/h8c8i3v2/microvisionchain:latest microvisionchain:latest
+```
+
+成功后，你可以使用`docker images`查看拉取的镜像：
+
+```bash
+REPOSITORY                                 TAG        IMAGE ID       CREATED       SIZE
+microvisionchain                           latest     35630de7b95e   2 hours ago   967MB
+public.ecr.aws/h8c8i3v2/microvisionchain   latest     35630de7b95e   2 hours ago   967MB
+public.ecr.aws/h8c8i3v2/microvisionchain   v0.2.0.0   35630de7b95e   2 hours ago   967MB
+```
+
+## 运行Docker容器
+
+### 直接运行
+
+运行Docker之前，请确保你已经安装docker，并构建或者拉取了镜像(参考上文的内容)。
+
+你可以使用如下命令直接运行节点容器：
+
+```bash
+docker run -d --name microvisionchain -p 9883:9883 -p 9882:9882 microvisionchain:latest
+```
+
+它会采用默认配置启动节点，数据和配置也会存放在容器默认路径`/.mvc/`下，你可以通过`docker logs microvisionchain`查看节点日志。
+
+节点容器启动之后，可以使用mvc-cli来查看节点信息：
+
+```bash
+docker exec microvisionchain mvc-cli getinfo
+```
+
+这样配置的好处是管理相对简单，但是缺点是持久化存储依赖于容器运行时，如果容器被删除，数据也会丢失。所以不推荐生产环境直接执行。另外，默认配置无法修改config文件，如果你需要修改配置文件，可以使用下面的方法。
+
+### 使用docker-compose运行
+
+docker-compose是docker的一个管理工具，可以通过yaml文件来管理多个容器的启动和配置。在docker
+compose中，你可以指定节点的配置文件和数据目录绑定到主机，方便管理和维护。也可以设置节点网络桥接到主机等。
+
+
+
