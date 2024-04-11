@@ -6,6 +6,8 @@ sidebar_position: 2
 
 MVC节点需要运行在Ubuntu 20.04 LTS系统上。请确保你的运行环境为Ubuntu 20.04 LTS并满足[硬件要求](hardware-requirements.md)。
 
+如果你的系统不是Ubuntu 20.04 LTS，你可以使用Docker来运行节点，具体请参考[使用Docker构建与运行](docker-build.md)。
+
 ## 安装环境依赖
 
 如果你在本地已经进行了[编译构建](node-compilation.md)，你的运行环境所需的依赖库已经安装。 可以跳过这一步环境安装。

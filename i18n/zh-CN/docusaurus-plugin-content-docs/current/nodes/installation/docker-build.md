@@ -7,6 +7,8 @@ sidebar_position: 3
 为了方便运维和管理，很多用户选择在容器化的环境中运行节点，包括Docker
 Compose以及Kubernetes等。MVC同样提供了Docker镜像的构建和下载，方便用户使用容器化的环境来安装和部署节点软件。
 
+使用Docker还可以在非Ubuntu系统上运行节点，比如macOS和Windows系统。
+
 本文档将介绍如何使用Docker构建和运行节点。
 
 ## 构建Docker镜像
@@ -95,7 +97,7 @@ public.ecr.aws/h8c8i3v2/microvisionchain   v0.2.0.0   35630de7b95e   2 hours ago
 docker run -d --name microvisionchain -p 9883:9883 -p 9882:9882 microvisionchain:latest
 ```
 
-它会采用默认配置启动节点，数据和配置也会存放在容器默认路径`/.mvc/`下，你可以通过`docker logs microvisionchain`查看节点日志。
+它会采用默认配置启动节点，数据和配置也会存放在容器默认路径`/root/.mvc/`下，另外由于容器环境不同，日志不是输出在mvcd.log中而是stdio，你可以通过`docker logs microvisionchain`查看节点日志。
 
 节点容器启动之后，可以使用mvc-cli来查看节点信息：
 
@@ -103,7 +105,7 @@ docker run -d --name microvisionchain -p 9883:9883 -p 9882:9882 microvisionchain
 docker exec microvisionchain mvc-cli getinfo
 ```
 
-这样配置的好处是管理相对简单，但是缺点是持久化存储依赖于容器运行时，如果容器被删除，数据也会丢失。所以不推荐生产环境直接执行。另外，默认配置无法修改config文件，如果你需要修改配置文件，可以使用下面的方法。
+这样配置的好处是管理相对简单，但是缺点是持久化存储依赖于容器运行时，如果容器被删除，数据也会丢失。所以不推荐生产环境直接执行docker。另外，默认配置无法修改config文件，如果你需要修改配置文件，可以使用下面的方法。
 
 ### 使用docker-compose运行
 
@@ -112,17 +114,13 @@ compose中，你可以指定节点的配置文件和数据目录绑定到主机�
 
 ## 附录
 
-### Aws EC2 Ubuntu instance 安装和初始化Docker服务
+### Ubuntu 安装和初始化Docker服务
 
 ```bash
 #!/bin/bash
-# add docker group and add current user to docker group
-sudo groupadd docker
-sudo usermod -aG docker $USER
-
 # Add Docker's official GPG key:
 sudo apt-get update
-sudo apt-get install ca-certificates curl
+sudo apt-get install -y ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -134,9 +132,22 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Enable and start Docker
 systemctl enable docker
 systemctl start docker
 ```
+
+### Ubuntu 设置docker用户组
+
+docker默认使用的是root用户访问unix socket，如果普通用户无需sudo来执行docker命令，可以将用户加入docker用户组。
+
+```bash
+# add docker group and add current user to docker group
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo newgrp docker
+```
+
+然后重启主机即可生效。
