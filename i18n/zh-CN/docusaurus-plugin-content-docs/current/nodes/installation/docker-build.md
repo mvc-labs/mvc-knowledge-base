@@ -132,7 +132,7 @@ cd mvc-dockerfile
 配置完成后，运行docker-compose：
 
 ```bash
-docker compose  up -d
+docker compose up -d
 ```
 
 这样就可以启动节点容器了，你可以通过`docker compose ls`查看容器状态：
