@@ -64,7 +64,7 @@ const config: Config = {
             title: 'MVC Labs',
             logo: {
                 alt: 'My Site Logo',
-                src: 'img/logo.svg',
+                src: 'img/microvisionchain.png',
             },
             items: [
                 {

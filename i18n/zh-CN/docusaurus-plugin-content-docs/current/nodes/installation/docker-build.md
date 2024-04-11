@@ -110,5 +110,33 @@ docker exec microvisionchain mvc-cli getinfo
 docker-compose是docker的一个管理工具，可以通过yaml文件来管理多个容器的启动和配置。在docker
 compose中，你可以指定节点的配置文件和数据目录绑定到主机，方便管理和维护。也可以设置节点网络桥接到主机等。
 
+## 附录
 
+### Aws EC2 Ubuntu instance 安装和初始化Docker服务
 
+```bash
+#!/bin/bash
+# add docker group and add current user to docker group
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Enable and start Docker
+systemctl enable docker
+systemctl start docker
+```
