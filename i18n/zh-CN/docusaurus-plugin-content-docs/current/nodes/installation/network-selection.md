@@ -52,10 +52,16 @@ addnode=43.132.109.146:29883
 addnode=43.129.203.34:19883
 addnode=node.mvclabs.io:19883
 
-# testnet init params(deprecated)
-chaininitparam=NDIwMDAwMDAwMDAwMDAwOjUwMDAwMDAwMDA6MTQ3MDAwOjVlMTUxNDMwNTE2M2RiYTQ4YmM1NTAwYWRhMDg1Yzc4N2U3ZTBkYmU6MTA=
+# testnet init params
+firstBlockReward=420000000000000
+initialReward=5000000000
+subsidyHalvingInterval=147000
+firstBlockGenesisLockScript=5e1514305163dba48bc5500ada085c787e7e0dbe
+genesisLockHeight=10
+# testnet chainwork is different from mainnet
+minimumchainwork=0000000000000000000000000000000000000000000000001388a1b78b278709
 ```
 
-测试网目前的状态可以通过[MvcScan](https://testnet.mvcscan.com/)测试网浏览器查看。
+测试网目前的状态可以通过[MvcScan](https://test.mvcscan.com/)测试网浏览器查看。
 
 如果需要测试网space进行测试，可以自行[运行测试网节点挖矿](/docs/mining/config/set-up-your-own)获得测试币，或者参考[申请测试币水龙头](/docs/introduction/getting-started/enviroment/claim-faucet)。
