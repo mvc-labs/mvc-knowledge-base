@@ -120,7 +120,7 @@ mvcd --help
 
 ### ZMQ
 
-控制ZMQ推送，了解更多zmq频道及其用法请查阅 [zmq文档](/docs/nodes/usage/zmq)
+控制ZMQ推送，了解更多zmq频道及其用法请查阅 [zmq文档](../usage/zmq.md)
 
 | 参数名                                        | 参数描述                                                                                       |
 |--------------------------------------------|--------------------------------------------------------------------------------------------|
@@ -150,7 +150,6 @@ mvcd --help
 | -maxtxfee=\<amt\>          | Maximum total fees (in SPACE) to use in a single wallet transaction or raw transaction; setting this too low may abort large transactions (default: 0.10)                                                                                                                                                                                                                                                                          |
 | -printtoconsole            | Send trace/debug info to console instead of bitcoind.log file                                                                                                                                                                                                                                                                                                                                                                      |
 | -shrinkdebugfile           | Shrink bitcoind.log file on client startup (default: 1 when no -debug)                                                                                                                                                                                                                                                                                                                                                             |
-|                            |
 
 ### 网络选择
 
