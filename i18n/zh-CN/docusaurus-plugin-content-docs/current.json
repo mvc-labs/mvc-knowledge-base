@@ -168,7 +168,7 @@
     "description": "The label for category MVC CLI in sidebar nodesSidebar"
   },
   "sidebar.nodesSidebar.category.MVC CLI.link.generated-index.description": {
-    "message": "MVC-CLI是一个命令行工具，可以随节点软件一起进行安装。用来向节点直接发送命令，进行交互操作",
+    "message": "MVC-CLI是一个命令行工具，可以随节点软件一起进行安装。用来向节点直接发送命令，进行交互操作。在安装节点的机器上执行mvc-cli命令就可以和节点交互。本章节主要介绍节点cli命令的使用方法。",
     "description": "The generated-index page description for category MVC CLI in sidebar nodesSidebar"
   },
   "sidebar.nodesSidebar.category.RPC Definition": {
