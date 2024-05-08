@@ -2,7 +2,7 @@
 
 Control 命令主要用于控制节点的启动停止，以及监控信息等。
 
-可以使用`mvc-cli help command`来查看具体命令的使用方法。
+可以使用`mvc-cli help command`来查看具体命令的使用方法。JsonRpc调用方法在示例中。
 
 ## 命令列表
 

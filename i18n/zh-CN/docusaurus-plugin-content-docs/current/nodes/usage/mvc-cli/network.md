@@ -2,7 +2,7 @@
 
 处理和节点P2P网络相关的命令。
 
-可以使用`mvc-cli help command`来查看具体命令的使用方法。
+可以使用`mvc-cli help command`来查看具体命令的使用方法。JsonRpc调用方法在示例中。
 
 ## 命令列表
 

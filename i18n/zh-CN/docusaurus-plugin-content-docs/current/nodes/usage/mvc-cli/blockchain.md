@@ -2,7 +2,7 @@
 
 Blockchain下属命令主要用来操作和区块链共识相关的功能。
 
-可以使用`mvc-cli help command`来查看具体命令的使用方法。
+可以使用`mvc-cli help command`来查看具体命令的使用方法。JsonRpc调用方法在示例中。
 
 ## 命令列表
 
