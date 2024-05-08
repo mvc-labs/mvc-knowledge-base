@@ -30,7 +30,7 @@ Pruning is a useful feature for individual users or small organizations that wis
 prune=<n>
 ```
 
-Replace <n> with the number of megabytes you want to allocate for blockchain data storage. For example, to allocate 1 GB of storage, you can set `prune=1000`. See [start up command](../installation/start-up-command.md) for more information.
+Replace n with the number of megabytes you want to allocate for blockchain data storage. For example, to allocate 1 GB of storage, you can set `prune=1000`. See [start up command](../installation/start-up-command.md) for more information.
 
 ### Option B: Using the Startup Command
 
@@ -40,7 +40,7 @@ When starting the MVC node, you can specify the prune mode directly in the start
 mvcd -prune=<n>
 ```
 
-Replace <n> with the number of megabytes you want to allocate for blockchain data storage. For example, to allocate 1 GB of storage, you can use `mvcd -prune=1000`. See [start up command](../installation/start-up-command.md) for more information.
+Replace n with the number of megabytes you want to allocate for blockchain data storage. For example, to allocate 1 GB of storage, you can use `mvcd -prune=1000`. See [start up command](../installation/start-up-command.md) for more information.
 
 ### Option C: Using the MVC-CLI
 
@@ -50,7 +50,7 @@ You can prune the blockchain data using the MVC-CLI tool. Use the following comm
 mvc-cli pruneblockchain <n>
 ```
 
-Replace <n> with the height of the block up to which you want to prune the blockchain data. For example, to prune the blockchain up to block height 500, you can use `mvc-cli pruneblockchain 500`. See [MVC-CLI Blockchain](../usage/mvc-cli/blockchain.md) for more information.
+Replace n with the height of the block up to which you want to prune the blockchain data. For example, to prune the blockchain up to block height 500, you can use `mvc-cli pruneblockchain 500`. See [MVC-CLI Blockchain](../usage/mvc-cli/blockchain.md) for more information.
 
 ## How to confirm prune mode
 
