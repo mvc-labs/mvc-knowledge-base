@@ -1,4 +1,4 @@
 ---
 sidebar_position: 5
 ---
-# MetaId
+# MetaId Web3 Identity
