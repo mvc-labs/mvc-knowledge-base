@@ -1,10 +1,11 @@
 # Wallet
 
-Operating the local wallet. 
+Operating the local wallet.
 
 The wallet function of the node needs to be enabled to use it normally.
 
->建议：除非十分了解节点钱包构造和备份方法，否则不要随意使用钱包命令，有资金损失的风险。
+> Suggestion: Unless you are very familiar with how to construct and back up a node wallet, do not casually use wallet
+> commands, as there is a risk of losing funds.
 
 You can use `mvc-cli help command` to view the usage of specific commands. The JsonRpc call method is in the example.
 
@@ -58,10 +59,13 @@ signmessage "address" "message"
 
 ## abandontransaction
 
-放弃指定的交易以及子孙。可以让utxo重新可用。此命令仅针对未进入内存池和未确认的交易有效。仅作用在内部钱包中。
+Mark in-wallet transaction \<txid> as abandoned
+This will mark this transaction and all its in-wallet descendants as abandoned which will allow
+for their inputs to be respent. It can be used to replace "stuck" or evicted transactions.
 
-参数：
-- `txid` (string, required) 交易ID
+Param：
+
+- `txid` (string, required)
 
 ```text
 abandontransaction "txid"
@@ -84,13 +88,13 @@ Examples:
 
 ## addmultisigaddress
 
-添加多重签名地址。返回一个多重签名地址。
+Add a nrequired-to-sign multisignature address to the wallet.
 
-参数：
+Param：
 
-- `nrequired` (numeric, required) 至少需要的签名数。
-- `keys` (array, required) 公钥列表。
-- `account` (string, optional) 账户名称。
+- `nrequired` (numeric, required)
+- `keys` (array, required)
+- `account` (string, optional)
 
 ```text
 addmultisigaddress nrequired ["key",...] ( "account" )
@@ -122,11 +126,11 @@ As json rpc call
 
 ## backupwallet
 
-备份钱包到指定路径。
+Safely copies current wallet file to destination, which can be a directory or a path with filename.
 
-参数：
+Param：
 
-- `destination` (string, required) 备份文件路径。
+- `destination` (string, required)
 
 ```text
 backupwallet "destination"
@@ -143,11 +147,12 @@ Examples:
 
 ## dumpprivkey
 
-获取指定地址的私钥。钱包必须收录此地址。
+Reveals the private key corresponding to 'address'.
+Then the importprivkey can be used with this output
 
-参数：
+Param：
 
-- `address` (string, required) 地址。
+- `address` (string, required)
 
 ```text
 dumpprivkey "address"
@@ -169,11 +174,11 @@ Examples:
 
 ## dumpwallet
 
-将钱包的所有私钥导出到指定文件。
+Dumps all wallet keys in a human-readable format to a server-side file. This does not allow overwriting existing files.
 
-参数：
+Param：
 
-- `filename` (string, required) 导出文件路径。
+- `filename` (string, required)
 
 ```text
 dumpwallet "filename"
@@ -195,11 +200,11 @@ Examples:
 
 ## encryptwallet
 
-加密钱包。加密后的钱包每次调用私钥都需要输入密码。
+Encrypts the wallet with 'passphrase'. This is for first time encryption.
 
-参数：
+Param：
 
-- `passphrase` (string, required) 密码。
+- `passphrase` (string, required)
 
 ```text
 encryptwallet "passphrase"
@@ -234,11 +239,11 @@ As a json rpc call
 
 ## getaccount
 
-获取地址对应的账户名称。DEPRECATED。
+DEPRECATED. Returns the account associated with the given address.
 
-参数：
+Param：
 
-- `address` (string, required) 地址。
+- `address` (string, required)
 
 ```text
 getaccount "address"
@@ -258,11 +263,11 @@ Examples:
 
 ## getaccountaddress
 
-获取账户对应的地址。DEPRECATED。
+DEPRECATED. Returns the current MVC address for receiving payments to this account.
 
-参数：
+Param：
 
-- `account` (string, required) 账户名称。
+- `account` (string, required) 
 
 ```text
 getaccountaddress "account"
@@ -284,11 +289,11 @@ Examples:
 
 ## getaddressesbyaccount
 
-获取账户对应的地址列表。DEPRECATED。
+DEPRECATED. Returns the list of addresses for the given account.
 
-参数：
+Param：
 
-- `account` (string, required) 账户名称。
+- `account` (string, required)
 
 ```text
 getaddressesbyaccount "account"
@@ -311,13 +316,13 @@ Examples:
 
 ## getbalance
 
-获取钱包余额。
+Get the total balance in the wallet.
 
-参数：
+Param：
 
-- `account` (string, optional) 账户名称。DEPRECATED。
-- `minconf` (numeric, optional, default=1) 最小确认数。
-- `include_watchonly` (bool, optional, default=false) 是否包含观察地址。
+- `account` (string, optional)
+- `minconf` (numeric, optional, default=1)
+- `include_watchonly` (bool, optional, default=false)
 
 ```text
 getbalance ( "account" minconf include_watchonly )
@@ -360,11 +365,11 @@ As a json rpc call
 
 ## getnewaddress
 
-获取一个新的地址。
+Returns a new MVC address for receiving payments.
 
-参数：
+Param：
 
-- `account` (string, optional) 账户名称。
+- `account` (string, optional)
 
 ```text
 getnewaddress ( "account" )
@@ -386,7 +391,7 @@ Examples:
 
 ## getrawchangeaddress
 
-获取找零地址。
+Returns a new MVC address, for receiving change.
 
 ```text
 getrawchangeaddress
@@ -404,12 +409,13 @@ Examples:
 
 ## getreceivedbyaccount
 
-获取账户收到的金额。DEPRECATED。
+DEPRECATED. Returns the total amount received by addresses with \<account> in transactions with at least [minconf]
+confirmations.
 
-参数：
+Param：
 
-- `account` (string, required) 账户名称。
-- `minconf` (numeric, optional, default=1) 最小确认数。
+- `account` (string, required)
+- `minconf` (numeric, optional, default=1)
 
 ```text
 getreceivedbyaccount "account" ( minconf )
@@ -440,12 +446,12 @@ As a json rpc call
 
 ## getreceivedbyaddress
 
-获取地址收到的金额。
+Returns the total amount received by the given address in transactions with at least minconf confirmations.
 
-参数：
+Param：
 
-- `address` (string, required) 地址。
-- `minconf` (numeric, optional, default=1) 最小确认数。
+- `address` (string, required)
+- `minconf` (numeric, optional, default=1)
 
 ```text
 getreceivedbyaddress "address" ( minconf )
@@ -476,12 +482,12 @@ As a json rpc call
 
 ## gettransaction
 
-获取钱包收录的交易信息。
+Get detailed information about in-wallet transaction \<txid>
 
-参数：
+Param：
 
-- `txid` (string, required) 交易ID。
-- `include_watchonly` (bool, optional, default=false) 是否包含观察地址。
+- `txid` (string, required)
+- `include_watchonly` (bool, optional, default=false)
 
 ```text
 gettransaction "txid" ( include_watchonly )
@@ -530,7 +536,7 @@ Examples:
 
 ## getunconfirmedbalance
 
-获取未确认交易的余额。
+Returns the server's total unconfirmed balance
 
 ```text
 getunconfirmedbalance
@@ -544,7 +550,7 @@ Examples:
 
 ## getwalletinfo
 
-获取钱包信息。
+Returns an object containing various wallet state info.
 
 ```text
 getwalletinfo
@@ -573,14 +579,14 @@ Examples:
 
 ## importaddress
 
-导入地址或脚本到观察钱包。不可花费。
+Adds a script (in hex) or address that can be watched as if it were in your wallet but cannot be used to spend.
 
-参数：
+Param：
 
-- `address` (string, required) 地址。
-- `label` (string, optional) 标签。
-- `rescan` (bool, optional, default=true) 是否重新扫描区块。
-- `p2sh` (bool, optional, default=false) 是否是P2SH地址。
+- `address` (string, required)
+- `label` (string, optional)
+- `rescan` (bool, optional, default=true)
+- `p2sh` (bool, optional, default=false)
 
 ```text
 importaddress "address" ( "label" rescan p2sh )
@@ -613,12 +619,13 @@ As a JSON-RPC call
 
 ## importmulti
 
-批量导入地址或脚本到观察钱包。不可花费。
+Import addresses/scripts (with private or public keys, redeem script (P2SH)), rescanning all addresses in
+one-shot-only (rescan can be disabled via options).
 
-参数：
+Param：
 
-- `requests` (array, required) 请求列表。
-- `options` (object, optional) 选项。
+- `requests` (array, required)
+- `options` (object, optional)
 
 ```text
 importmulti "requests" "options"
@@ -661,13 +668,13 @@ Response is an array with the same size as the input that has the execution resu
 
 ## importprivkey
 
-导入私钥到钱包。可花费。
+Adds a private key (as returned by dumpprivkey) to your wallet.
 
-参数：
+Param：
 
-- `mvcprivkey` (string, required) 私钥。
-- `label` (string, optional) 标签。
-- `rescan` (bool, optional, default=true) 是否重新扫描区块。
+- `mvcprivkey` (string, required)
+- `label` (string, optional)
+- `rescan` (bool, optional, default=true)
 
 ```text
 importprivkey "mvcprivkey" ( "label" ) ( rescan )
@@ -701,12 +708,14 @@ As a JSON-RPC call
 
 ## importprunedfunds
 
-导入裁剪的UTXO到钱包。
+Imports funds without rescan. Corresponding address or script must previously be included in wallet. Aimed towards
+pruned wallets. The end-user is responsible to import additional transactions that subsequently spend the imported
+outputs or rescan after the point in the blockchain the transaction is included.
 
-参数：
+Param：
 
-- `rawtransaction` (string, required) 裁剪的交易。
-- `txoutproof` (string, required) 交易证明。
+- `rawtransaction` (string, required)
+- `txoutproof` (string, required)
 
 ```text
 importprunedfunds
@@ -725,13 +734,13 @@ Examples:
 
 ## importpubkey
 
-导入公钥到钱包。不可花费。
+Adds a public key (in hex) that can be watched as if it were in your wallet but cannot be used to spend.
 
-参数：
+Param：
 
-- `pubkey` (string, required) 公钥。
-- `label` (string, optional) 标签。
-- `rescan` (bool, optional, default=true) 是否重新扫描区块。
+- `pubkey` (string, required)
+- `label` (string, optional)
+- `rescan` (bool, optional, default=true)
 
 ```text
 importpubkey "pubkey" ( "label" rescan )
@@ -759,11 +768,11 @@ As a JSON-RPC call
 
 ## importwallet
 
-导入钱包文件。
+Imports keys from a wallet dump file (see dumpwallet).
 
-参数：
+Param：
 
-- `filename` (string, required) 文件路径。
+- `filename` (string, required)
 
 ```text
 importwallet "filename"
@@ -787,11 +796,11 @@ Import using the json rpc call
 
 ## keypoolrefill
 
-填充密钥池。
+Fills the keypool.
 
-参数：
+Param：
 
-- `newsize` (numeric, optional) 新的密钥池大小。
+- `newsize` (numeric, optional)
 
 ```text
 keypoolrefill ( newsize )
@@ -808,7 +817,9 @@ Examples:
 
 ## listaddressgroupings
 
-列出钱包中的地址组。
+Lists groups of addresses which have had their common ownership
+made public by common use as inputs or as the resulting change
+in past transactions
 
 ```text
 listaddressgroupings
@@ -839,7 +850,7 @@ The optional "account" value is only available for backward compatibility and sh
 
 ## listlockunspent
 
-列出锁定的UTXO。
+Returns list of temporarily unspendable outputs.
 
 ```text
 listlockunspent
@@ -876,12 +887,12 @@ As a json rpc call
 
 ## listreceivedbyaccount
 
-列出账户收到的金额。DEPRECATED。
+DEPRECATED. List balances by account.
 
-参数：
+Param：
 
-- `minconf` (numeric, optional, default=1) 最小确认数。
-- `includeempty` (bool, optional, default=false) 是否包含空账户。
+- `minconf` (numeric, optional, default=1)
+- `includeempty` (bool, optional, default=false)
 
 ```text
 listreceivedbyaccount ( minconf include_empty include_watchonly)
@@ -913,13 +924,13 @@ Examples:
 
 ## listreceivedbyaddress
 
-列出地址收到的金额。
+List balances by receiving address.
 
-参数：
+Param：
 
-- `minconf` (numeric, optional, default=1) 最小确认数。
-- `includeempty` (bool, optional, default=false) 是否包含空地址。
-- `include_watchonly` (bool, optional, default=false) 是否包含观察地址。
+- `minconf` (numeric, optional, default=1)
+- `includeempty` (bool, optional, default=false)
+- `include_watchonly` (bool, optional, default=false)
 
 ```text
 listreceivedbyaddress ( minconf include_empty include_watchonly)
@@ -958,13 +969,13 @@ The optional "account" value is only available for backward compatibility and sh
 
 ## listsinceblock
 
-列出自指定区块后的已确认交易。
+Get all transactions in blocks since block [blockhash], or all transactions if omitted
 
-参数：
+Param：
 
-- `blockhash` (string, required) 区块哈希。
-- `target_confirmations` (numeric, optional, default=1) 目标确认数。
-- `include_watchonly` (bool, optional, default=false) 是否包含观察地址。
+- `blockhash` (string, required)
+- `target_confirmations` (numeric, optional, default=1)
+- `include_watchonly` (bool, optional, default=false)
 
 ```text
 listsinceblock ( "blockhash" target_confirmations include_watchonly)
@@ -1009,14 +1020,14 @@ Examples:
 
 ## listtransactions
 
-列出钱包中的交易。
+Returns up to 'count' most recent transactions skipping the first 'from' transactions for account 'account'.
 
-参数：
+Param：
 
-- `account` (string, optional) 账户名称。DEPRECATED。
-- `count` (numeric, optional, default=10) 返回交易数量。
-- `skip` (numeric, optional, default=0) 从第几个交易开始。
-- `include_watchonly` (bool, optional, default=false) 是否包含观察地址。
+- `account` (string, optional)
+- `count` (numeric, optional, default=10)
+- `skip` (numeric, optional, default=0)
+- `include_watchonly` (bool, optional, default=false)
 
 ```text
 listtransactions ( "account" count skip include_watchonly)
@@ -1083,14 +1094,14 @@ As a json rpc call
 
 ## listunspent
 
-列出未花费的交易。
+Returns array of unspent transaction outputs
 
-参数：
+Param：
 
-- `minconf` (numeric, optional, default=1) 最小确认数。
-- `maxconf` (numeric, optional, default=9999999) 最大确认数。
-- `addresses` (array, optional) 地址列表。
-- `include_unsafe` (bool, optional, default=false) 是否包含不安全的UTXO。
+- `minconf` (numeric, optional, default=1)
+- `maxconf` (numeric, optional, default=9999999)
+- `addresses` (array, optional)
+- `include_unsafe` (bool, optional, default=false)
 
 ```text
 listunspent ( minconf maxconf  ["addresses",...] [include_unsafe] )
@@ -1140,12 +1151,12 @@ Examples
 
 ## lockunspent
 
-锁定或解锁UTXO。
+Updates list of temporarily unspendable outputs.
 
-参数：
+Param：
 
-- `unlock` (bool, required) 是否解锁。
-- `transactions` (array, required) 交易列表。
+- `unlock` (bool, required)
+- `transactions` (array, required)
 
 ```text
 lockunspent unlock ([{"txid":"txid","vout":n},...])
@@ -1192,15 +1203,15 @@ As a json rpc call
 
 ## move
 
-将金额从一个账户转移到另一个账户。
+DEPRECATED. Move a specified amount from one account in your wallet to another.
 
-参数：
+Param：
 
-- `fromaccount` (string, required) 源账户。DEPRECATED。
-- `toaccount` (string, required) 目标账户。DEPRECATED。
-- `amount` (numeric, required) 金额。
-- `minconf` (numeric, optional, default=1) 最小确认数。
-- `comment` (string, optional) 备注。
+- `fromaccount` (string, required)
+- `toaccount` (string, required)
+- `amount` (numeric, required)
+- `minconf` (numeric, optional, default=1)
+- `comment` (string, optional)
 
 ```text
 move "fromaccount" "toaccount" amount ( minconf "comment" )
@@ -1231,16 +1242,16 @@ As a json rpc call
 
 ## sendfrom
 
-从指定账户发送金额到指定地址。DEPRECATED。
+DEPRECATED (use sendtoaddress). Sent an amount from an account to a mvc address.
 
-参数：
+Param：
 
-- `fromaccount` (string, required) 源账户。DEPRECATED。
-- `toaddress` (string, required) 目标地址。
-- `amount` (numeric, required) 金额。
-- `minconf` (numeric, optional, default=1) 最小确认数。
-- `comment` (string, optional) 备注。
-- `comment_to` (string, optional) 备注。
+- `fromaccount` (string, required)
+- `toaddress` (string, required)
+- `amount` (numeric, required)
+- `minconf` (numeric, optional, default=1)
+- `comment` (string, optional)
+- `comment_to` (string, optional)
 
 ```text
 sendfrom "fromaccount" "toaddress" amount ( minconf "comment" "comment_to" )
@@ -1278,14 +1289,14 @@ As a json rpc call
 
 ## sendmany
 
-从指定账户发送金额到多个地址。DEPRECATED。
+Send multiple times. Amounts are double-precision floating point numbers.
 
-参数：
+Param：
 
-- `fromaccount` (string, required) 源账户。DEPRECATED。
-- `amounts` (json, required) 金额列表。
-- `minconf` (numeric, optional, default=1) 最小确认数。
-- `comment` (string, optional) 备注。
+- `fromaccount` (string, required)
+- `amounts` (json, required)
+- `minconf` (numeric, optional, default=1)
+- `comment` (string, optional)
 
 ```text
 sendmany "fromaccount" {"address":amount,...} ( minconf "comment" ["address",...] )
@@ -1331,15 +1342,15 @@ As a json rpc call
 
 ## sendtoaddress
 
-发送金额到指定地址。
+Send an amount to a given address.
 
-参数：
+Param：
 
-- `address` (string, required) 目标地址。
-- `amount` (numeric, required) 金额。
-- `comment` (string, optional) 备注。
-- `comment_to` (string, optional) 备注。
-- `subtractfeefromamount` (bool, optional, default=false) 是否从金额中扣除手续费。
+- `address` (string, required)
+- `amount` (numeric, required)
+- `comment` (string, optional)
+- `comment_to` (string, optional)
+- `subtractfeefromamount` (bool, optional, default=false)
 
 ```text
 sendtoaddress "address" amount ( "comment" "comment_to" subtractfeefromamount )
@@ -1369,12 +1380,12 @@ Examples:
 
 ## setaccount
 
-设置地址的账户。DEPRECATED。
+DEPRECATED. Sets the account associated with the given address.
 
-参数：
+Param：
 
-- `address` (string, required) 地址。
-- `account` (string, required) 账户名称。
+- `address` (string, required)
+- `account` (string, required)
 
 ```text
 setaccount "address" "account"
@@ -1392,11 +1403,11 @@ Examples:
 
 ## settxfee
 
-设置交易手续费。会覆盖配置文件中的paytxfee设定。
+Set the transaction fee per kB. Overwrites the paytxfee parameter.
 
-参数：
+Param：
 
-- `amount` (numeric, required) 金额。
+- `amount` (numeric, required)
 
 ```text
 settxfee amount
@@ -1416,12 +1427,12 @@ Examples:
 
 ## signmessage
 
-使用内置钱包对消息进行签名。
+Sign a message with the private key of an address
 
-参数：
+Param：
 
-- `address` (string, required) 地址。
-- `message` (string, required) 消息。
+- `address` (string, required)
+- `message` (string, required)
 
 ```text
 signmessage "address" "message"
