@@ -18,7 +18,7 @@ verifyscript <scripts> [<stopOnFirstInvalid> [<totalTimeout>]]
 
 ## clearinvalidtransactions
 
-清除无效交易。
+Deletes stored invalid transactions.
 
 ```text
 clearinvalidtransactions
@@ -29,12 +29,12 @@ Result: number of bytes freed.
 
 ## createmultisig
 
-创建多重签名地址。
+Creates a multi-signature address with n signature of m keys required.
 
-参数：
+Param：
 
-- `nrequired` (numeric, required) 所需签名数量。
-- `keys` (array, required) 公钥列表。
+- `nrequired` (numeric, required)
+- `keys` (array, required)
 
 ```text
 createmultisig nrequired ["key",...]
@@ -67,12 +67,12 @@ As a json rpc call
 
 ## signmessagewithprivkey
 
-使用私钥对消息进行签名。
+Sign a message with the private key of an address
 
-参数：
+Param：
 
-- `privkey` (string, required) 私钥。
-- `message` (string, required) 消息。
+- `privkey` (string, required)
+- `message` (string, required)
 
 ```text
 signmessagewithprivkey "privkey" "message"
@@ -100,11 +100,11 @@ As json rpc
 
 ## validateaddress
 
-校验地址编码是否合法。
+Return information about the given mvc address.
 
-参数：
+Param：
 
-- `address` (string, required) 地址。
+- `address` (string, required)
 
 ```text
 validateaddress "address"
@@ -137,9 +137,9 @@ Examples:
 
 ## verifymessage
 
-校验消息签名。
+Verify a signed message
 
-参数：
+Param：
 
 - `address` (string, required) 地址。
 - `signature` (string, required) 签名。
@@ -175,13 +175,13 @@ As json rpc
 
 ## verifyscript
 
-校验脚本能否正确解锁。
+Verify a script in given transactions.
 
-参数：
+Param：
 
-- `scripts` (string, required) 脚本列表。
-- `stopOnFirstInvalid` (boolean, optional) 是否在遇到第一个无效脚本时停止校验。
-- `totalTimeout` (numeric, optional) 总超时时间。
+- `scripts` (string, required)
+- `stopOnFirstInvalid` (boolean, optional)
+- `totalTimeout` (numeric, optional)
 
 ```text
 verifyscript <scripts> [<stopOnFirstInvalid> [<totalTimeout>]]
