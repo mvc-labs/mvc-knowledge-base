@@ -110,19 +110,36 @@ architecture, which can enhance the entire network's processing capacity through
 
 ![/img/mvc-processor.png](/img/mvc-processor.png)
 
-The capability to handle very large blocks also opens up the possibility of reducing fees because more transactions can be accommodated, allowing miners to lower transaction rates while ensuring network security, thus improving user experience. This mechanism can also introduce healthy competition among miners, encouraging them to gradually reduce transaction fees in exchange for higher volume, enhancing the overall efficiency of the network, benefiting everyone in the ecosystem, and ultimately developing MVC into a strong infrastructure for Web3.
+The capability to handle very large blocks also opens up the possibility of reducing fees because more transactions can
+be accommodated, allowing miners to lower transaction rates while ensuring network security, thus improving user
+experience. This mechanism can also introduce healthy competition among miners, encouraging them to gradually reduce
+transaction fees in exchange for higher volume, enhancing the overall efficiency of the network, benefiting everyone in
+the ecosystem, and ultimately developing MVC into a strong infrastructure for Web3.
 
 ## Secure Zero Confirmation
 
-Zero confirmation refers to transactions that have not yet been packed into a block but have been broadcasted across the network and accepted by the main transaction processors (or miners). In the Bitcoin network, zero confirmation transactions are unsafe because the block generation time is 10 minutes and block sizes are limited, causing transactions to wait some time before confirmation. This delay provides attackers with sufficient time to perform double-spend attacks. Therefore, zero confirmation transactions are generally not accepted by merchants in the Bitcoin network.
+Zero confirmation refers to transactions that have not yet been packed into a block but have been broadcasted across the
+network and accepted by the main transaction processors (or miners). In the Bitcoin network, zero confirmation
+transactions are unsafe because the block generation time is 10 minutes and block sizes are limited, causing
+transactions to wait some time before confirmation. This delay provides attackers with sufficient time to perform
+double-spend attacks. Therefore, zero confirmation transactions are generally not accepted by merchants in the Bitcoin
+network.
 
-MVC has made improvements on this basis. Firstly, it has removed the Replace-by-Fee (RBF) mechanism, which could allow unconfirmed transactions to be replaced, making transactions in the mempool immutable. Secondly, since MVC has no block size limit and can accommodate more transactions, transactions with **normal fees** can be expected to be packed in the next block, greatly reducing the possibility of double spending. Additionally, MVC has built-in transaction security mechanisms; if a transaction is double-spent, it can be immediately detected and marked by the network, giving merchants more confidence when accepting transactions.
+MVC has made improvements on this basis. Firstly, it has removed the Replace-by-Fee (RBF) mechanism, which could allow
+unconfirmed transactions to be replaced, making transactions in the mempool immutable. Secondly, since MVC has no block
+size limit and can accommodate more transactions, transactions with **normal fees** can be expected to be packed in the
+next block, greatly reducing the possibility of double spending. Additionally, MVC has built-in transaction security
+mechanisms; if a transaction is double-spent, it can be immediately detected and marked by the network, giving merchants
+more confidence when accepting transactions.
 
-By fostering stronger and tighter links between network nodes, transactions are propagated exponentially and reach the entire network, significantly increasing the cost of attempting a double-spend. This is also the goal hoped to be achieved by what is known as the "small world network":
+By fostering stronger and tighter links between network nodes, transactions are propagated exponentially and reach the
+entire network, significantly increasing the cost of attempting a double-spend. This is also the goal hoped to be
+achieved by what is known as the "small world network":
 
 ![/img/zero-confirmation.png](/img/zero-confirmation.png)
 
-In fact, this design is exactly what Satoshi Nakamoto, the inventor of Bitcoin, envisioned. Satoshi once mentioned on BitcoinTalk why 10 seconds is already enough to ensure transaction security:
+In fact, this design is exactly what Satoshi Nakamoto, the inventor of Bitcoin, envisioned. Satoshi once mentioned on
+BitcoinTalk why 10 seconds is already enough to ensure transaction security:
 
 [Click to view Satoshi Nakamoto's own comment](https://bitcointalk.org/index.php?topic=423.msg3819#msg3819)
 
@@ -143,6 +160,10 @@ So if a double-spend has to wait even a second, it has a huge disadvantage.
 The payment processor has connections with many nodes.  When it gets a transaction, it blasts it out, and at the same time monitors the network for double-spends.  If it receives a double-spend on any of its many listening nodes, then it alerts that the transaction is bad.  A double-spent transaction wouldn't get very far without one of the listeners hearing it.  The double-spender would have to wait until the listening phase is over, but by then, the payment processor's broadcast has reached most nodes, or is so far ahead in propagating that the double-spender has no hope of grabbing a significant percentage of the remaining nodes.
 ```
 
-MVC's zero confirmation design approach implements what Satoshi Nakamoto envisioned, using various security mechanisms to significantly increase the cost of double-spending, allowing merchants to confidently accept zero confirmation transactions and improving user experience.
+MVC's zero confirmation design approach implements what Satoshi Nakamoto envisioned, using various security mechanisms
+to significantly increase the cost of double-spending, allowing merchants to confidently accept zero confirmation
+transactions and improving user experience.
 
-In practice, MVC can evaluate the risk of a transaction based on the amount being transferred and the cost required for double-spending. Transactions with higher risk ratings require waiting for more blocks. This allows merchants to decide whether to accept zero confirmation transactions based on their own risk tolerance.
+In practice, MVC can evaluate the risk of a transaction based on the amount being transferred and the cost required for
+double-spending. Transactions with higher risk ratings require waiting for more blocks. This allows merchants to decide
+whether to accept zero confirmation transactions based on their own risk tolerance.
