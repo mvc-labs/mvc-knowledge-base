@@ -28,18 +28,17 @@ settxnpropagationfreq freq
 
 ## addnode
 
-尝试将Peer节点添加到或从节点连接列表中删除。
+Attempts add or remove a node from the addnode list. Or try a connection to a node once.
 
-参数：
+Param：
 
-- `node` (string, required) 要添加或删除的节点的IP地址和端口。
-- `command` (string, required) 操作类型，可以是`add`、`remove`或`onetry`。
+- `node` (string, required)
+- `command` (string, required)
 
 ```text
 addnode "node" "add|remove|onetry"
 
-Attempts add or remove a node from the addnode list.
-Or try a connection to a node once.
+Attempts add or remove a node from the addnode list. Or try a connection to a node once.
 
 Arguments:
 1. "node"     (string, required) The node (see getpeerinfo for nodes)
@@ -50,10 +49,9 @@ Examples:
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "addnode", "params": ["192.168.0.6:9883", "onetry"] }' -H 'content-type: text/plain;' http://127.0.0.1:9882/
 ```
 
-
 ## clearbanned
 
-清除所有被禁止的IP地址。
+Clear all banned IPs.
 
 ```text
 clearbanned
@@ -69,7 +67,7 @@ Examples:
 
 断开与指定节点的连接。
 
-参数：
+Param：
 
 - `address` (string, optional) 要断开连接的节点的IP地址和端口。
 - `nodeid` (string, optional) 要断开连接的节点的ID。
@@ -96,17 +94,16 @@ Examples:
 
 ## getaddednodeinfo
 
-获取已添加的节点信息。
+Returns information about the given added node, or all added nodes(note that onetry addnodes are not listed here)
 
-参数：
+Param：
 
-- `node` (string, optional) 要获取信息的节点的IP地址和端口。
+- `node` (string, optional)
 
 ```text
 getaddednodeinfo ( "node" )
 
-Returns information about the given added node, or all added nodes
-(note that onetry addnodes are not listed here)
+Returns information about the given added node, or all added nodes(note that onetry addnodes are not listed here)
 
 Arguments:
 1. "node"   (string, optional) If provided, return information about this specific node, otherwise all nodes are returned.
@@ -134,7 +131,7 @@ Examples:
 
 ## getconnectioncount
 
-获取当前连接的节点数量。
+Returns the number of connections to other nodes.
 
 ```text
 getconnectioncount
@@ -151,7 +148,7 @@ Examples:
 
 ## getexcessiveblock
 
-获取当前节点的接受的最大区块大小。
+Return the excessive block size.
 
 ```text
 getexcessiveblock
@@ -167,7 +164,8 @@ Examples:
 
 ## getnettotals
 
-获取网络流量统计信息。
+Returns information about network traffic, including bytes in, bytes out,
+and current time.
 
 ```text
 getnettotals
@@ -198,7 +196,7 @@ Examples:
 
 ## getnetworkinfo
 
-获取网络综合信息。
+Returns an object containing various state info regarding P2P networking.
 
 ```text
 getnetworkinfo
@@ -252,7 +250,7 @@ Examples:
 
 ## getpeerinfo
 
-获取当前连接的Peer节点信息。
+Returns data about each connected network node as a json array of objects.
 
 ```text
 getpeerinfo
@@ -331,7 +329,7 @@ Examples:
 
 ## listbanned
 
-列出所有被禁止的IP地址。
+List all banned IPs/Subnets.
 
 ```text
 listbanned
@@ -345,7 +343,9 @@ Examples:
 
 ## ping
 
-Ping所有peer的节点，衡量网络状况，网络状况更新后可以使用getpeerinfo查看。
+Requests that a ping be sent to all other nodes, to measure ping time.
+Results provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.
+Ping command is handled in queue with all other commands, so it measures processing backlog, not just network ping.
 
 ```text
 ping
@@ -361,14 +361,14 @@ Examples:
 
 ## setban
 
-禁止或解禁指定IP地址。
+Attempts add or remove a IP/Subnet from the banned list.
 
-参数：
+Param：
 
-- `subnet` (string, required) 要禁止或解禁的IP地址。
-- `command` (string, required) 操作类型，可以是`add`或`remove`。
-- `bantime` (numeric, optional) 禁止时间，单位为秒。
-- `absolute` (boolean, optional) 是否使用绝对时间。
+- `subnet` (string, required)
+- `command` (string, required)
+- `bantime` (numeric, optional)
+- `absolute` (boolean, optional)
 
 ```text
 setban "subnet" "add|remove" (bantime) (absolute)
@@ -389,11 +389,11 @@ Examples:
 
 ## setblockmaxsize
 
-设置节点挖矿产出的的最大区块大小。
+Sets maximum size of produced block.
 
-参数：
+Param：
 
-- `blockSize` (numeric, required) 区块大小字节数。
+- `blockSize` (numeric, required)
 
 ```text
 setblockmaxsize blockSize
@@ -409,11 +409,12 @@ Examples:
 
 ## setexcessiveblock
 
-设置节点接受的最大区块大小。
+Set the excessive block size. Excessive blocks will not be used in the active chain or relayed. This discourages the
+propagation of blocks that you consider excessively large.
 
-参数：
+Param：
 
-- `blockSize` (numeric, required) 区块大小字节数。
+- `blockSize` (numeric, required)
 
 ```text
 setexcessiveblock blockSize
@@ -429,11 +430,11 @@ Examples:
 
 ## setnetworkactive
 
-启用或禁用P2P网络。
+Disable/enable all p2p network activity.
 
-参数：
+Param：
 
-- state `true|false` (boolean, required) 是否启用P2P网络。
+- state `true|false` (boolean, required)
 
 ```text
 setnetworkactive true|false
@@ -458,11 +459,11 @@ Enable networking
 
 ## settxnpropagationfreq
 
-设置交易传播频率。
+Set the frequency (in milli-seconds) the transaction propagator runs at.
 
-参数：
+Param：
 
-- `freq` (numeric, required) 传播频率毫秒。
+- `freq` (numeric, required)
 
 ```text
 settxnpropagationfreq freq

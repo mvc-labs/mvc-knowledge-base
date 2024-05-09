@@ -16,12 +16,12 @@ generatetoaddress nblocks address (maxtries)
 
 ## generate
 
-尝试在节点上挖矿，生成指定数量的区块。
+Mine up to nblocks blocks immediately (before the RPC call returns) to an address in the wallet.
 
-参数：
+Param：
 
-- `nblocks` (numeric, required) 要生成的区块数量。
-- `maxtries` (numeric, optional) 最大尝试次数（默认为1000000）。
+- `nblocks` (numeric, required) 
+- `maxtries` (numeric, optional)
 
 ```text
 generate nblocks ( maxtries )
@@ -44,9 +44,9 @@ Generate 11 blocks
 
 ## generatetoaddress
 
-尝试在节点上挖矿，生成指定数量的区块，并将奖励发送到指定地址。
+Mine blocks immediately to a specified address (before the RPC call returns)
 
-参数：
+Param：
 
 - `nblocks` (numeric, required) 要生成的区块数量。
 - `address` (string, required) 奖励发送到的地址。

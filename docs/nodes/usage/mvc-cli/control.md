@@ -18,7 +18,7 @@ uptime
 
 ## activezmqnotifications
 
-获取当前节点的ZMQ通知状态，开放哪些端口，以及对应的地址等信息。
+Get the active zmq notifications and their addresses
 
 ```text
 activezmqnotifications
@@ -41,7 +41,7 @@ Examples:
 
 > Deprecated
 
-获取当前节点的信息，包括版本、区块高度、连接数等。
+DEPRECATED. Returns an object containing various state info.
 
 ```text
 getinfo
@@ -79,7 +79,7 @@ Examples:
 
 ## getmemoryinfo
 
-获取当前节点的内存池使用情况。
+Returns an object containing information about memory usage.
 
 ```text
 getmemoryinfo
@@ -104,7 +104,7 @@ Examples:
 
 ## help
 
-获取帮助信息。
+List all commands, or get help for a specified command.
 
 ```text
 help ( "command" )
@@ -126,7 +126,7 @@ Examples:
 
 ## stop
 
-停止当前节点。
+Stop MVC server.
 
 ```text
 stop
@@ -136,7 +136,7 @@ Stop MVC server.
 
 ## uptime
 
-获取当前节点的运行时间。
+Returns the total uptime of the server.
 
 ```text
 uptime
