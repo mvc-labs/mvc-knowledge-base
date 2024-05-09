@@ -3,6 +3,8 @@ sidebar_position: 6
 ---
 # MetaId Web3 Identity
 
+Introduction to a new paradigm of web3 identity verification.
+
 In the Web2 era, our identity verification largely depended on centralized identity authorities such as banks, governments, and third-party identity services. While these centralized institutions could provide certain identity verification services, they also posed several issues, such as the risk of user data leakage and cumbersome verification processes. Additionally, major internet companies built their own isolated ecosystems through various apps, trapping user data within these apps, preventing free data flow across different platforms. These companies also exploited their monopolistic advantages to control and profit from user data. Worse still, centralized internet companies often blocked user accounts and restricted the freedom of speech without user consent.
 
 In summary, in the Web2 era, your data did not belong to you but to the internet companies, and your identity did not belong to you but to the government and financial institutions. This centralized method of identity verification not only posed privacy risks but also limited user freedom and negatively impacted user experience.

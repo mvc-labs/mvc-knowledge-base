@@ -4,6 +4,8 @@ sidebar_position: 2
 
 # 首次运行
 
+在Linux服务器上运行MVC节点。
+
 MVC节点需要运行在Ubuntu 20.04 LTS系统上。请确保你的运行环境为Ubuntu 20.04 LTS并满足[硬件要求](hardware-requirements.md)。
 
 如果你的系统不是Ubuntu 20.04 LTS，你可以使用Docker来运行节点，具体请参考[使用Docker构建与运行](docker-build.md)。

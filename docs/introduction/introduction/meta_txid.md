@@ -3,6 +3,8 @@ sidebar_position: 5
 ---
 # MetaTxid and Pure Layer 1
 
+State Expansion Issue and how MetaTxid technology solves it.
+
 ## State Expansion Issue
 
 In our discussion on [BVM and UTXO smart contracts](mvc-bvm-utxo.md), we detailed the fundamental characteristics of MVC smart contracts. One notable aspect is that certain contract states require traceability, meaning the state must be verified back to the genesis state, which could potentially lead to unlimited state expansion.

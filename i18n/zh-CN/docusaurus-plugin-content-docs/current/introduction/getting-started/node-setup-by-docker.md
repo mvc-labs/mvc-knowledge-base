@@ -1,5 +1,7 @@
 # Docker快速启动节点
 
+介绍如何使用Docker快速搭建一个MVC节点。
+
 本文目标是使用Docker以最少的步骤快速搭建一个MVC节点，方便用户快速部署节点。使用Docker可以将节点软件部署到任意x86_64架构的系统上，无需关心系统环境和依赖库的安装（arm MAC os因为有转译功能，所以也可以运行）。
 
 详细的配置还有以及如何使用Docker构建镜像的内容请参考[MVC节点Docker构建与运行](/docs/nodes/installation/docker-build)。

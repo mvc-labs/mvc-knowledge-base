@@ -4,12 +4,12 @@ sidebar_position: 3
 
 # 使用Docker构建与运行
 
+介绍如何使用Docker构建和运行节点。
+
 为了方便运维和管理，很多用户选择在容器化的环境中运行节点，包括Docker
 Compose以及Kubernetes等。MVC同样提供了Docker镜像的构建和下载，方便用户使用容器化的环境来安装和部署节点软件。
 
 使用Docker还可以在非Ubuntu系统上运行节点，比如macOS和Windows系统。
-
-本文档将介绍如何使用Docker构建和运行节点。
 
 ## 构建Docker镜像
 
