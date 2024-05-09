@@ -22,21 +22,7 @@ signrawtransaction "hexstring" ( [{"txid":"id","vout":n,"scriptPubKey":"hex","re
 
 ## createrawtransaction
 
-创建一个生交易。指定Utxo，创建新的输出。
-
-参数：
-
-inputs：输入的utxo。
-- `txid` (string, required) Utxo的txid。
-- `vout` (numeric, required) Utxo的vout。
-- `sequence` (numeric, optional) Utxo的sequence。
-
-outputs：输出。
-
-- `address` (string, required) 输出地址。value是输出金额。
-- `data` (string, optional) 输出数据。
-
-locktime：锁定时间。
+Create a transaction spending the given inputs and creating new outputs.
 
 ```text
 createrawtransaction [{"txid":"id","vout":n},...] {"address":amount,"data":"hex",...} ( locktime )
@@ -77,11 +63,11 @@ Examples:
 
 ## decoderawtransaction
 
-解码一个原始交易，输出json。
+Return a JSON object representing the serialized, hex-encoded transaction.
 
-参数：
+Param：
 
-- `hexstring` (string, required) 原始交易的十六进制字符串。
+- `hexstring` (string, required)
 
 ```text
 decoderawtransaction "hexstring"
@@ -136,9 +122,9 @@ Examples:
 
 ## decodescript
 
-解码一个脚本，输出json。
+Decode a hex-encoded script.
 
-参数：
+Param：
 
 - `hexstring` (string, required) 脚本的十六进制字符串。
 
@@ -170,12 +156,12 @@ Examples:
 
 ## fundrawtransaction
 
-为原始交易添加输入，用于支付手续费，返回一个完整的原始交易。
+Add inputs to a transaction until it has enough in value to meet its out value.
 
-参数：
+Param：
 
-- `hexstring` (string, required) 原始交易的十六进制字符串。
-- `options` (object, optional) 选项。
+- `hexstring` (string, required)
+- `options` (object, optional)
 
 ```text
 fundrawtransaction "hexstring" ( options )
@@ -235,12 +221,12 @@ Send the transaction
 
 ## getrawtransaction
 
-从节点获取原始交易。
+Return the raw transaction data.
 
-参数：
+Param：
 
-- `txid` (string, required) 交易id。
-- `verbose` (bool, optional, default=false) 详细程度。false返回生交易，true返回详细信息。
+- `txid` (string, required)
+- `verbose` (bool, optional, default=false)
 
 ```text
 getrawtransaction "txid" ( verbose )
@@ -313,13 +299,13 @@ Examples:
 
 ## sendrawtransaction
 
-广播原始交易。
+Submits raw transaction (serialized, hex-encoded) to local node and network.
 
-参数：
+Param：
 
-- `hexstring` (string, required) 原始交易的十六进制字符串。
-- `allowhighfees` (bool, optional, default=false) 是否允许高手续费。
-- `dontcheckfee` (bool, optional, default=false) 是否检查手续费。
+- `hexstring` (string, required)
+- `allowhighfees` (bool, optional, default=false)
+- `dontcheckfee` (bool, optional, default=false)
 
 ```text
 sendrawtransaction "hexstring" ( allowhighfees dontcheckfee )
@@ -352,17 +338,15 @@ As a json rpc call
 
 ## sendrawtransactions
 
-广播多个原始交易。批量广播接口性能更好。需要保证交易的依赖关系，祖先交易在前，子交易在后。
+Submits raw transactions (serialized, hex-encoded) to local node and network.
 
-参数：
+Param：
 
-交易列表
-
-- `hex` (string, required) 原始交易的十六进制字符串。
-- `allowhighfees` (bool, optional, default=false) 是否允许高手续费。
-- `dontcheckfee` (bool, optional, default=false) 是否检查手续费。
-- `listunconfirmedancestors` (bool, optional, default=false) 是否列出未确认的祖先交易。
-- `config` (string, optional) 配置信息。
+- `hex` (string, required)
+- `allowhighfees` (bool, optional, default=false)
+- `dontcheckfee` (bool, optional, default=false)
+- `listunconfirmedancestors` (bool, optional, default=false)
+- `config` (string, optional)
 
 ```text
 sendrawtransactions [{"hex": "hexstring", "allowhighfees": true|false, "dontcheckfee": true|false, "listunconfirmedancestors": true|false, "config: " <json string> }, ...]
@@ -466,14 +450,14 @@ Examples:
 
 ## signrawtransaction
 
-签名原始交易inputs。
+Sign inputs for raw transaction (serialized, hex-encoded).
 
-参数：
+Param：
 
-- `hexstring` (string, required) 原始交易的十六进制字符串。
-- `prevtxs` (array, optional) 交易的输入。
-- `privatekeys` (array, optional) 私钥。
-- `sighashtype` (string, optional) 签名类型。
+- `hexstring` (string, required)
+- `prevtxs` (array, optional)
+- `privatekeys` (array, optional)
+- `sighashtype` (string, optional)
 
 ```text
 signrawtransaction "hexstring" ( [{"txid":"id","vout":n,"scriptPubKey":"hex","redeemScript":"hex"},...] ["privatekey1",...] sighashtype )
