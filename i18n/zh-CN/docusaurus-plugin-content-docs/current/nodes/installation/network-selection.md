@@ -66,4 +66,4 @@ minimumchainwork=0000000000000000000000000000000000000000000000001388a1b78b27870
 
 测试网目前的状态可以通过[MvcScan](https://test.mvcscan.com/)测试网浏览器查看。
 
-如果需要测试网space进行测试，可以自行[运行测试网节点挖矿](/docs/mining/config/set-up-your-own)获得测试币，或者参考[申请测试币水龙头](/docs/introduction/getting-started/enviroment/claim-faucet)。
+如果需要测试网space进行测试，可以自行[运行测试网节点挖矿](../../mining/config/set-up-your-own.md)获得测试币，或者参考[申请测试币水龙头](../../introduction/getting-started/enviroment/claim-faucet.md)。
