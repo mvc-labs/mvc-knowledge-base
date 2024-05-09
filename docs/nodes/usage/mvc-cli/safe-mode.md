@@ -2,7 +2,8 @@
 
 Safe Mode while Consensus Forks
 
-This command is used to protect miners when there is a consensus fork in the blockchain, stopping the generation of block templates and the acceptance of transactions.
+This command is used to protect miners when there is a consensus fork in the blockchain, stopping the generation of
+block templates and the acceptance of transactions.
 
 You can use `mvc-cli help command` to view the usage of specific commands. The JsonRpc call method is in the example.
 
@@ -17,7 +18,7 @@ reconsidersafemodeforblock "blockhash"
 
 ## getsafemodeinfo
 
-获取当前节点的Safe Mode状态，以及对应的区块信息。
+Returns safe mode status.
 
 ```text
 getsafemodeinfo
@@ -94,11 +95,11 @@ Examples:
 
 ## ignoresafemodeforblock
 
-忽略指定区块的Safe Mode状态，继续生成区块模板和接受交易。
+Specified block, and all its descendants, will be ignored for safe mode activation.
 
-参数：
+Param：
 
-- `blockhash` (string, required) 要忽略的区块哈希值。
+- `blockhash` (string, required)
 
 ```text
 ignoresafemodeforblock "blockhash"
@@ -117,11 +118,11 @@ Examples:
 
 ## reconsidersafemodeforblock
 
-重新考虑指定区块的Safe Mode状态，停止生成区块模板和接受交易。
+Specified block, and all its ancestors, will be considered for safe mode activation.
 
-参数：
+Param：
 
-- `blockhash` (string, required) 要重新考虑的区块哈希值。
+- `blockhash` (string, required)
 
 ```text
 reconsidersafemodeforblock "blockhash"
