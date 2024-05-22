@@ -48,7 +48,7 @@ the MVC transaction network.
 | Tutorial       | https://github.com/mvc-labs/mvcpool-manual |
 | Algo           | SHA256                                     |
 | RewardMode     | PPLNS (Pay per last N shares)              |
-| Fee Rate       | 区块奖励的1%                                    |
+| Fee Rate       | PPLNS(1%)                             |
 | Mining Address | mine.mvcpool.com:6666                      |
 | AsicBoost      | Supported                                  |
 
