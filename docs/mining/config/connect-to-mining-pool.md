@@ -1,5 +1,7 @@
 # Connect to Mining Pool
 
+Why you should use Mining Pool and Pools Supporting MVC.
+
 ## Why Use Mining Pool
 
 Mining pool is a centralized mining method that pools the computing power of multiple miners together to increase the
@@ -48,7 +50,7 @@ the MVC transaction network.
 | Tutorial       | https://github.com/mvc-labs/mvcpool-manual |
 | Algo           | SHA256                                     |
 | RewardMode     | PPLNS (Pay per last N shares)              |
-| Fee Rate       | PPLNS(1%)                             |
+| Fee Rate       | PPLNS(1%)                                  |
 | Mining Address | mine.mvcpool.com:6666                      |
 | AsicBoost      | Supported                                  |
 
@@ -71,9 +73,9 @@ is one of the first mining pools to support MVC mining, providing essential supp
 
 ### F2Pool
 
-[F2Pool](https://www.f2pool.com/)
-as one of the largest mining pools in the world, F2Pool supports multi-currency mining and multiple mining algorithms.
-F2Pool is a professional mining pool service provider that provides multiple mining algorithms and multiple billing
+As one of the largest mining pools in the world, [F2Pool](https://www.f2pool.com/) supports multi-currency mining and multiple mining algorithms.
+
+[F2Pool](https://www.f2pool.com/) is a professional mining pool service provider that provides multiple mining algorithms and multiple billing
 modes, as well as rich APIs and documents, to provide stable mining services to miners around the world.
 
 | Name           | F2Pool                                                        |
