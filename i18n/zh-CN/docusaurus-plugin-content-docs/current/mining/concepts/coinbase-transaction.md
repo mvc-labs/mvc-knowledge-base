@@ -56,6 +56,12 @@ Coinbase 交易（Coinbase Transaction）是指比特币和MVC区块链网络中
 
 下面是一个简化的 Coinbase 交易示例（以高度71704为例）：
 
+```bash
+mvc-cli getrawtransaction 1dad179ba3f547fa1412a92cf49e4d02af3fc9d52c9c0f3a00d6600b2818f591 1
+```
+
+得到如下输出：
+
 ```plaintext
 {
   "txid": "1dad179ba3f547fa1412a92cf49e4d02af3fc9d52c9c0f3a00d6600b2818f591",
