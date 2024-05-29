@@ -6,7 +6,7 @@ sidebar_position: 1
 
 本文介绍挖矿究竟是一种怎样的过程，哈希算法是如何工作的。
 
-MVC类的POW挖矿是一种数学运算，矿工通过不断尝试不同的随机数来计算[区块头的哈希值](../../blockchain/bitcoin-basics/block/block-hash.md)
+MVC的POW挖矿是一种数学运算，矿工通过不断尝试不同的随机数来计算[区块头的哈希值](../../blockchain/bitcoin-basics/block/block-hash.md)
 ，直到找到一个符合[难度目标](../../blockchain/bitcoin-basics/block/bits.md)
 的哈希值，找到难度目标的哈希值的矿工会获得区块奖励以及交易手续费奖励。这个通过哈希计算获取奖励过程就是POW挖矿。
 
