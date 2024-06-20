@@ -31,7 +31,7 @@ mvc合约在设计开发之初scrypt还没完善，因此采用了scrypt classic
 | [mvcdao-core](https://github.com/mvc-labs/mvcdao-core)  |  scrypt classic |
 | [token-core-ts](https://github.com/xiangpengm/token-core-ts)  | scrypt classic + scrypt |
 
-token-core-ts是对mvc原token、nft合约翻译为scrypt，但是测试用例沿用了scrypt classic，因此开发类型为两种混用。由于scrypt-ts库主要面向BSV不能直接在MVC链使用，因此token-core-ts使用 [patch-package](https://github.com/ds300/patch-package)的方式适配MVC，具体使用方式下文详述。
+token-core-ts是对mvc原token、nft合约翻译为scrypt，但是测试用例沿用了scrypt classic，因此开发类型为两种混用。由于scrypt-ts库主要面向BSV不能直接在MVC链使用，因此使用 [patch-package](https://github.com/ds300/patch-package)的方式适配MVC，具体使用方式下文详述。
 
 
 ## 第一个MVC sCrypt合约工程
