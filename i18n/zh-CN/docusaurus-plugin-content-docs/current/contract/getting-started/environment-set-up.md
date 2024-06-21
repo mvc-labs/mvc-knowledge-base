@@ -10,7 +10,7 @@ MVC 智能合约开发使用 sCrypt 开发套件，sCrypt 开发语言分成两�
 
 ### [scrypt classic](https://scrypt-ide.readthedocs.io/en/latest/getting_started.html)
 使用scrypt classic编写智能合约，合约源文件以.scrypt结尾，使用 scryptc 编译为 [bvm 字节码](https://en.bitcoin.it/wiki/Script#Constants)，scryptlib实例化合约、构造交易、测试合约、部署上链。目前官方已不建议使用。
-![Alt text](../../../../../../static/img/scrypt-to-op.png)
+![Alt text](/img/scrypt-to-op.png)
 
 ### [scrypt](https://docs.scrypt.io/)
 使用 TypeScript 来编写智能合约，合约源文件以.ts结尾，具体流程为scrypt-ts-transpiler 转义 .ts 为.scrypt， scryptc 编译为 bvm 字节码，最后用scrypt-ts 实例化合约、构造交易、测试合约、部署上链。
@@ -19,7 +19,7 @@ MVC 智能合约开发使用 sCrypt 开发套件，sCrypt 开发语言分成两�
 - 只需编写TypeScript，方便前后端集成
 - 打包为npm package，方便复用合约，分发合约
 
-![Alt text](../../../../../../static/img/scrypt-ts-to-op.png)
+![Alt text](/img/scrypt-ts-to-op.png)
 
 ### mvc合约
 
@@ -42,7 +42,7 @@ token-core-ts是对mvc原token、nft合约翻译为scrypt，但是测试用例�
 npx scrypt-cli project demo
 cd demo && npm i
 ```
-![Alt text](../../../../../../static/img/scrypt-init.png)
+![Alt text](/img/scrypt-init.png)
 
 ### 添加patch指令
 
@@ -51,7 +51,7 @@ cd demo && npm i
 ```
 "patch": "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/xiangpengm/token-core-ts/main/patches/patch_1.3.31.sh)\""
 ```
-![Alt text](../../../../../../static/img/scrypt-add-patch.png)
+![Alt text](/img/scrypt-add-patch.png)
 
 ### 执行patch
 
@@ -59,11 +59,11 @@ cd demo && npm i
 npm run patch
 ```
 
-![Alt text](../../../../../../static/img/scrypt-run-patch.png)
+![Alt text](/img/scrypt-run-patch.png)
 
 ### 执行scrypt-ts本地测试
 
 ```
 npm run test
 ```
-![Alt text](../../../../../../static/img/scrypt-run-test.png)
+![Alt text](/img/scrypt-run-test.png)
