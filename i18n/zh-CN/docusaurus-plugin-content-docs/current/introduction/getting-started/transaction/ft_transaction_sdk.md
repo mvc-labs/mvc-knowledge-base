@@ -201,9 +201,9 @@ setupMyWalletAndOperateFt().catch(console.error);
 2. 创建FtManager实例并创造（Genesis）一个新的token，token名称可以任意指定。生成token的过程中会返回codehash, genesis, sensibleId, genesisTxId等信息。
 3. 等待1秒，等待token创建完成。
 4. 准备一些utxo用于支付后续手续费。
-5. 铸造（Mint）一些token用于销毁。
+5. 铸造（Mint）10000000000 个token。
 6. 等待1秒，等待token铸造完成。
-7. 分两次转账token到0地址，用于销毁。
+7. 分两次各转账100000个token到0地址，用于销毁。
 8. 等待1秒，等待token转账完成。
 9. 销毁token。
 10. 查询token余额。确认token销毁成功。
