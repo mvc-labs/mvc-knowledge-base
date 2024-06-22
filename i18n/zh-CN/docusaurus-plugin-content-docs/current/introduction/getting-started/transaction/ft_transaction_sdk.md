@@ -217,3 +217,17 @@ setupMyWalletAndOperateFt().catch(console.error);
 npx tsc
 node src/index.js
 ```
+
+如果一切正常，你会看到类似以下输出：
+
+```text
+Your balance 9701713 satoshis
+Creating token with name: <MintTest - 14:23>, symbol: <MVCTest>, decimal: <8>
+Token created with codehash: <c9cc7bbd1010b44873959a8b1a2bcedeb62302b7>, genesis: <a5ec95eb92ba6e79540329a5d7175f56358764f9>, genesisTxId: <9aeb779633d5421849840099fa233b02561a821a75215cedf8454aa6a2e9d14b>, sensibleId: <4bd1e9a2a64a45f8ed5c21751a821a56023b23fa990084491842d5339677eb9a00000000>
+Created fee providing txid  ce5ab0ec6419aa6e6d396138dbf2a7ef3031722e1ad9503f420a364b8e4a9965
+Minted 10000000000 MVCTest tokens by txid 6e11e6adcb2a8ff2c36d0f9136bcabc8959fd95c153ea0bce806fcd6552bc791 
+Sent 100000 MVCTest tokens to zero address by txid f0644eebfd6080caad3157d27935a1c5831d0a9c7f85dfa2d41706484cb25c5d
+Sent 100000 MVCTest tokens again to zero address by txid2 f0644eebfd6080caad3157d27935a1c5831d0a9c7f85dfa2d41706484cb25c5d
+Burned MVCTest tokens by txid 7f8e7e369eca88af40e3cfbd4815fc05ea16883811b89a9d8231030329b7904a
+Your token balance is 9999800000 MVCTest tokens
+```
