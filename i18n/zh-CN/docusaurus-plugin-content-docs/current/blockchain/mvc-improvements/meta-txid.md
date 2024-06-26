@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Meta Txid
+# MetaTxid
 
 介绍MetaTxid的实现原理以及解决溯源问题的方法。
 
