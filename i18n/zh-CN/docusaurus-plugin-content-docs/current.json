@@ -204,7 +204,7 @@
     "description": "The generated-index page description for category Blockchain in sidebar blockchainSidebar"
   },
   "sidebar.blockchainSidebar.category.Block": {
-    "message": "区块",
+    "message": "区块结构",
     "description": "The label for category Block in sidebar blockchainSidebar"
   },
   "sidebar.blockchainSidebar.category.Block.link.generated-index.description": {
@@ -212,7 +212,7 @@
     "description": "The generated-index page description for category Block in sidebar blockchainSidebar"
   },
   "sidebar.blockchainSidebar.category.Transaction": {
-    "message": "交易",
+    "message": "交易结构",
     "description": "The label for category Transaction in sidebar blockchainSidebar"
   },
   "sidebar.blockchainSidebar.category.Transaction.link.generated-index.description": {
