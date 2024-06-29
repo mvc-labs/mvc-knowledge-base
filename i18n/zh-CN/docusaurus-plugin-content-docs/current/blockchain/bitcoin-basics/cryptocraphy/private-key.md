@@ -10,7 +10,7 @@ sidebar_position: 1
 
 比特币和MVC使用密钥系统来控制所有权。其中最重要的是私钥和公钥。
 
-[公钥](public-key.md)用于生成地址和锁定[UTXO](../transaction/utxo.md)，表示接收方的身份。
+[公钥](public-key.md)用于生成地址和锁定UTXO，表示接收方的身份。
 
 私钥则用于计算和生成[签名](signature.md)，证明所有权以及解锁UTXO。
 
