@@ -21,7 +21,7 @@ Script）和解锁脚本（Unlocking Script），只有当解锁脚本满足锁�
 
 这些操作码在比特币交易脚本中用于实现各种功能，例如验证签名、多重签名和哈希锁定。
 
-详细信息请参阅[Bitcoin Wiki](https://en.bitcoin.it/wiki/Script)。
+详细信息请参阅[操作码](../../contract/bitcoin-scripts/opcode.md)。
 
 ![img.png](/img/bitcoin-script-stack.png)
 
