@@ -1,8 +1,0 @@
-{
-  "label": "Golang",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "MVC provided SDK in Go"
-  }
-}
