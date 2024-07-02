@@ -6,7 +6,7 @@ sidebar_position: 6
 
 本文介绍使用MetaContract SDK构建NFT（Non-Fungible Token）交易的方法。
 
-> 使用之前请确保已经完成环境配置和测试币领取，请参考[搭建一个MVC项目](../enviroment/setup-project)。
+> 使用之前请确保已经完成环境配置和测试币领取，请参考[搭建一个MVC项目](../enviroment/setup-project.md)。
 
 本文基于上述已经配置好的环境和密钥进行操作。
 

@@ -6,7 +6,7 @@ sidebar_position: 4
 
 本文档介绍如何使用FT SDK发行token，转账token，销毁token，查询token等操作。
 
-> 使用之前请确保已经完成环境配置和测试币领取，请参考[搭建一个MVC项目](../enviroment/setup-project)。
+> 使用之前请确保已经完成环境配置和测试币领取，请参考[搭建一个MVC项目](../enviroment/setup-project.md)。
 
 本文基于上述已经配置好的环境和密钥进行操作。
 
