@@ -137,7 +137,7 @@ main()
 ```bash
 npm run deploy
 ```
-如果测试地址无测试代币请前往MVC测试网[水龙头](https://witnessonchain.com/faucet/space)领取。
+如果测试地址无测试代币请前往MVC测试网[水龙头](https://witnessonchain.com/faucet/tspace)领取。
 
 ![Alt text](/img/scrypt-first-faucet.png)
 
